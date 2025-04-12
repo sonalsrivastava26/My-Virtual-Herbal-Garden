@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Contact - Virtual Herbal Garden</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="herbal garden, contact us, location, dehradun" name="keywords">
+    <meta content="Get in touch with us to learn more about herbal gardening" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Main Stylesheet -->
+    <link href="css/main.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Playfair Display, sans-serif;
+            margin: 20px;
+            padding: 10px;
+            background-color: #042e0a; /* Initial color */
+            height: 100vh; /* Full height */
+            margin: 0; /* Remove default margin */
+            transition: background-color 2s ease; /* Transition effect */
+            animation: colorChange 5s infinite alternate; /* Animation effect */
+        }
+
+        @keyframes colorChange {
+            0% {
+                background-color: #3498db; /* Initial color */
+            }
+            100% {
+                background-color: #2ecc71; /* Final color */
+            }
+        }
+        }
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+        }
+        .container {
+            width: 60%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .response {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container">
+            <a href="index.html" class="navbar-brand">
+                <h2 class="m-0 text-primary">Virtual Herbal Garden</h2>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="contact.html">QnA</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- Contact Hero Section -->
+    <section class="contact-hero py-5" data-aos="fade-up">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <h1 class="display-4 mb-4">Get in Touch with <span class="text-primary">Nature's Experts</span></h1>
+                    <p class="lead mb-4">Have questions about herbal gardening? Want to learn more about medicinal plants? We're here to help you on your journey to natural wellness.</p>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="contact-image-container">
+                        <img src="img/herbs/Gardning-image.jpg" 
+                             alt="Contact Us" 
+                             class="img-fluid rounded-3 shadow-lg">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Info Section -->
+    <section class="contact-info-section py-5 bg-light">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3>Visit Us</h3>
+                        <hr>
+                        <p>Lalbagh <br>Bengaluru, Karnataka<br>Pincode - 560004</p>
+                        <hr>
+                    </div>
+                </div>
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <h2> Did You Know?</h2>
+                    <div class="quote-container" id="quote">
+                        Click the button to get a new herb fact!
+                    </div>
+                    <br>
+                    <button id="change-quote-btn">Get New Fact</button>
+                    <hr>
+                    <button onclick="window.location.href='herbs.html'">Go to Herbs</button>
+                    
+                    <script>
+                        // Array of 20 "Did You Know" quotes related to Ayurvedic herbs
+                        const quotes = [
+                            "Did you know? Ashwagandha, also known as Indian Ginseng, helps reduce stress and anxiety and enhances energy levels.",
+                            "Did you know? Turmeric, a powerful anti-inflammatory herb, is used in Ayurveda to support joint health and improve skin texture.",
+                            "Did you know? Tulsi (Holy Basil) is known for its ability to strengthen immunity and is commonly used to combat colds and respiratory issues.",
+                            "Did you know? Aloe Vera is praised in Ayurveda for its healing properties, especially for burns, wounds, and its cooling effects on the body.",
+                            "Did you know? Neem is a purifying herb in Ayurveda, known for its ability to detoxify the body, fight infections, and support skin health.",
+                            "Did you know? Brahmi is considered a brain tonic in Ayurveda, improving memory, concentration, and mental clarity.",
+                            "Did you know? Triphala, a combination of three fruits (Amalaki, Bibhitaki, and Haritaki), is widely used for detoxification and promoting digestive health.",
+                            "Did you know? Moringa is packed with vitamins and antioxidants, and in Ayurveda, it is used to enhance energy and overall vitality.",
+                            "Did you know? Cardamom is commonly used in Ayurveda for improving digestion, freshening breath, and relieving nausea.",
+                            "Did you know? Saffron is highly regarded in Ayurveda for its ability to uplift mood, improve skin health, and provide anti-inflammatory benefits.",
+                            "Did you know? Ginger is a versatile herb in Ayurveda, used for soothing nausea, promoting digestion, and reducing inflammation.",
+                            "Did you know? Licorice root is used in Ayurveda to support respiratory health, alleviate sore throats, and reduce stress.",
+                            "Did you know? Ginseng is known for boosting energy and stamina in Ayurveda, helping combat fatigue and stress.",
+                            "Did you know? Shatavari is used in Ayurveda for its ability to balance hormones, support reproductive health, and promote vitality in women.",
+                            "Did you know? Fennel is used in Ayurveda to aid digestion, relieve bloating, and improve overall gut health.",
+                            "Did you know? Amla (Indian Gooseberry) is a powerhouse of vitamin C, and in Ayurveda, it is used to strengthen immunity and promote glowing skin.",
+                            "Did you know? Fenugreek seeds are known for their ability to regulate blood sugar levels, promote healthy digestion, and improve lactation in mothers.",
+                            "Did you know? Bhringraj is an Ayurvedic herb that supports hair health, reduces hair fall, and promotes hair growth.",
+                            "Did you know? Jatamansi is used in Ayurveda to calm the mind, reduce anxiety, and promote restful sleep.",
+                            "Did you know? Guduchi (Giloy) is considered one of the most potent herbs in Ayurveda for boosting immunity and enhancing overall health."
+                        ];
+                
+                        // Function to change the displayed quote
+                        function changeQuote() {
+                            // Get a random quote from the array
+                            const randomIndex = Math.floor(Math.random() * quotes.length);
+                            const newQuote = quotes[randomIndex];
+                            
+                            // Update the quote display
+                            document.getElementById('quote').textContent = newQuote;
+                        }
+                
+                        // Add event listener to the button to change the quote when clicked
+                        document.getElementById('change-quote-btn').addEventListener('click', changeQuote);
+                    </script> 
+                </div>
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>Email Us</h3>
+                        <hr>
+                        <p>sonal@gmail.com<br>saniya@gmail.com<br>srushti@gmail.com<br>vasundara@gmail.com</p>
+                        <hr>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="contact-form-section py-5">
+        <div class="container">
+            <div class="row">
+                <div class="container">
+                    <h1>Herb Information</h1>
+                    <p>Type the name of the herb and the topic you want to know about!</p>
+                    <input type="text" id="userInput" placeholder="Enter your query here...">
+                    <button onclick="getHerbInfo()">Get Info</button>
+                    <div id="response" class="response"></div>
+                </div>
+            
+                <script>
+                    const herbData = {
+
+                        "fennel": {
+                grow: "Fennel requires well-drained, slightly acidic soil and full sunlight. It prefers moderate watering and grows best in cooler climates.",
+                recipe: "Fennel Salad: Combine sliced fennel bulb, orange segments, and olive oil for a refreshing salad.",
+                dish: "Fennel tastes great simply pan-fried with olive oil, salt, and lemon pepper.",
+                benefits: "Fennel is known for aiding digestion, reducing bloating, and improving appetite. It is also rich in antioxidants and anti-inflammatory compounds.",
+                info: "Fennel is a perennial herb native to the Mediterranean. Its bulb, seeds, and leaves are all used in cooking and medicine."
+            },
+                       "ashwagandha": {
+                            "grow": "Ashwagandha thrives in well-drained, sandy soil and requires full sunlight. It needs little water and prefers warm climates.",
+                            "recipe": "Ashwagandha Tea: Boil ashwagandha root powder in water, add honey and lemon for flavor. Drink it to reduce stress and improve energy levels.",
+                            "dish": "Ashwagandha Milk: Mix ashwagandha powder with warm milk and a bit of honey. Drink it before bedtime to promote relaxation and improve sleep quality.",
+                            "delicacy": "Ashwagandha Smoothie: Blend ashwagandha root powder with banana, almond milk, honey, and a pinch of cinnamon. Enjoy it as a calming and energizing smoothie.",
+                            "benefits": "Ashwagandha is an adaptogen that helps the body cope with stress, improves brain function, reduces inflammation, and boosts energy.",
+                            "info": "Ashwagandha is an ancient herb native to India and North Africa. It is used in Ayurvedic medicine for its ability to promote relaxation and balance."
+                        },
+            
+            "Holy Basil": {
+                grow: "Holy basil grows well in warm climates with plenty of sunlight. It thrives in well-drained soil and needs regular watering.",
+                recipe: "Holy Basil Tea: Boil fresh holy basil leaves in water and add honey to taste. This tea is believed to relieve stress and boost immunity.",
+                benefits: "Holy basil is known for its medicinal properties, including stress relief, boosting immunity, fighting inflammation, and improving respiratory health.",
+                info: "Holy basil, also known as Tulsi, is native to India. It holds sacred significance in Hinduism and is widely used in traditional medicine."
+            },
+            
+            "catnip": {
+                grow: "Catnip grows well in well-drained soil with plenty of sunlight. It is a hardy plant that can tolerate dry conditions once established.",
+                recipe: "Catnip Tea: Steep dried catnip leaves in hot water for a calming tea. It is also sometimes used to calm pets.",
+                benefits: "Catnip is known to have calming effects on both humans and cats. It can relieve stress, promote better sleep, and aid in digestion.",
+                info: "Catnip is a member of the mint family and is commonly known for its effects on cats. It has been used in folk medicine to treat headaches and insomnia."
+            },
+            
+            "chives": {
+                grow: "Chives thrive in well-drained soil and require full sunlight. They need regular watering and are quite hardy in cool climates.",
+                recipe: "Chive Butter: Mix chopped chives with softened butter, salt, and pepper for a delicious spread that goes well with bread or vegetables.",
+                benefits: "Chives are rich in vitamins A and C, and they help in boosting immunity, promoting digestion, and reducing inflammation.",
+                info: "Chives are a member of the onion family. They are commonly used in culinary dishes as a garnish or seasoning."
+            },
+            
+            "dandelion": {
+                grow: "Dandelions are hardy plants that grow in a variety of soils, from sandy to clay. They require full sunlight and minimal care.",
+                recipe: "Dandelion Salad: Toss fresh dandelion leaves with other greens, olive oil, and vinegar for a nutritious, slightly bitter salad.",
+                benefits: "Dandelions are rich in vitamins and minerals and are known for their detoxifying properties. They help support liver health, digestion, and skin health.",
+                info: "Dandelions are widespread weeds known for their bright yellow flowers. They have been used in herbal medicine for their various health benefits."
+            },
+            
+            "ginger": {
+                "grow": "Ginger grows best in tropical and subtropical climates. It requires well-drained, rich soil and partial sunlight, with regular watering.",
+                "recipe": "Ginger Tea: Boil fresh ginger slices in water, add honey and lemon for flavor. This soothing tea can help with digestion and reduce nausea.",
+                "dish": "Ginger Lemonade: Mix fresh ginger juice with lemon juice, water, and a touch of honey. This refreshing drink is perfect for boosting immunity.",
+                "delicacy": "Ginger Smoothie: Blend fresh ginger with pineapple, banana, and almond milk for a tropical smoothie that supports digestion and provides energy.",
+                "benefits": "Ginger has anti-inflammatory and antioxidant properties. It helps with digestion, reduces nausea, and may relieve muscle pain.",
+                "info": "Ginger is a flowering plant from the family Zingiberaceae. It is commonly used in cooking and traditional medicine for its health benefits."
+            },
+            
+            "lavender": {
+                grow: "Lavender thrives in well-drained, sandy soil with full sunlight. It requires minimal watering and is drought-tolerant once established.",
+                recipe: "Lavender Honey: Infuse fresh lavender flowers in honey for a fragrant, flavorful treat that can be used in teas or desserts.",
+                benefits: "Lavender is known for its calming effects, promoting relaxation, reducing anxiety, and improving sleep. It also has antiseptic properties.",
+                info: "Lavender is a fragrant herb native to the Mediterranean. It is commonly used in aromatherapy, as well as in cooking and cosmetics."
+            },
+            
+            "lemon balm": {
+                grow: "Lemon balm prefers well-drained, moist soil and partial sunlight. It is easy to grow and can tolerate a variety of soil types.",
+                recipe: "Lemon Balm Tea: Steep fresh lemon balm leaves in hot water for a calming and refreshing herbal tea.",
+                benefits: "Lemon balm is known for its calming effects and is commonly used to reduce stress, improve sleep, and relieve digestive discomfort.",
+                info: "Lemon balm is a member of the mint family. It is native to Europe and has been used for centuries for its soothing properties."
+            },
+            
+            "wild oregano": {
+                grow: "Wild oregano thrives in dry, well-drained soil and full sunlight. It needs moderate watering and can tolerate a variety of growing conditions.",
+                recipe: "Wild Oregano Pesto: Blend fresh oregano leaves with garlic, olive oil, and pine nuts for a flavorful twist on the classic pesto.",
+                benefits: "Wild oregano is known for its antimicrobial properties and is used to treat respiratory issues, digestive problems, and infections.",
+                info: "Wild oregano is a perennial herb native to Europe and Asia. It is used in cooking and has been a staple in traditional medicine for centuries."
+            },
+            
+            "purple sage": {
+                grow: "Purple sage prefers well-drained soil and full sunlight. It thrives in dry, arid conditions and needs minimal watering once established.",
+                recipe: "Sage Butter: Mix fresh purple sage leaves with butter, salt, and pepper for a delicious topping for meats or vegetables.",
+                benefits: "Purple sage is known for its antioxidant properties, aiding in digestion, improving memory, and promoting hormonal balance.",
+                info: "Purple sage is a variety of sage with vibrant purple leaves. It is used both in cooking and in herbal medicine, known for its unique flavor."
+            },
+            
+            "thyme (wild)": {
+                grow: "Wild thyme prefers well-drained, rocky soil and full sunlight. It is drought-tolerant and requires minimal maintenance once established.",
+                recipe: "Wild Thyme Infused Oil: Steep fresh thyme in olive oil for a fragrant oil that can be used in cooking or as a salad dressing.",
+                benefits: "Wild thyme is known for its antimicrobial and anti-inflammatory properties. It helps with respiratory issues, digestion, and boosts immunity.",
+                info: "Wild thyme is a hardy herb native to Europe and is used extensively in cooking and traditional medicine for its healing properties."
+            },
+                "arugula": {
+                    grow: "Arugula thrives in cool weather and prefers well-drained, fertile soil. It needs full sun to partial shade and regular watering.",
+                    recipe: "Arugula Salad: Toss arugula leaves with olive oil, lemon juice, salt, pepper, and shaved Parmesan cheese for a light salad.",
+                    benefits: "Arugula is rich in vitamins A, C, and K, and contains antioxidants that support heart health, improve digestion, and reduce inflammation.",
+                    info: "Arugula is a leafy green herb native to the Mediterranean. It is commonly used in salads and as a garnish due to its peppery flavor."
+                },
+                
+                "chili pepper": {
+                    grow: "Chili peppers grow best in warm temperatures with full sun. They prefer well-drained soil and need regular watering.",
+                    recipe: "Chili Sauce: Blend fresh chili peppers with garlic, vinegar, and salt to make a spicy chili sauce.",
+                    benefits: "Chili peppers are high in vitamin C and capsaicin, which can boost metabolism, relieve pain, and reduce inflammation.",
+                    info: "Chili peppers are native to the Americas and are widely used in cooking to add heat and flavor to dishes."
+                },
+                
+                "cilantro": {
+                    grow: "Cilantro grows best in well-drained, fertile soil and needs moderate sunlight. It requires regular watering and cool temperatures.",
+                    recipe: "Cilantro Pesto: Blend cilantro leaves with olive oil, garlic, lemon juice, and pine nuts for a flavorful pesto.",
+                    benefits: "Cilantro is known for its detoxifying properties, helping to remove heavy metals from the body, and it also supports digestion.",
+                    info: "Cilantro is native to the Mediterranean and is widely used in both cooking and traditional medicine. Both the leaves and seeds are used."
+                },
+            
+                "echinacea": {
+                    grow: "Echinacea thrives in well-drained soil and full sun. It prefers moderate watering and is drought-tolerant once established.",
+                    recipe: "Echinacea Tea: Steep dried Echinacea flowers in hot water for 5-10 minutes to make a soothing tea.",
+                    benefits: "Echinacea is known for its immune-boosting properties, and it is commonly used to help reduce the severity of colds and flu.",
+                    info: "Echinacea is native to North America and has been used for centuries in traditional medicine for its immune-enhancing properties."
+                },
+                "horseradish": {
+                    grow: "Horseradish thrives in well-drained, loamy soil with full sun. It needs regular watering, especially during dry periods.",
+                    recipe: "Horseradish Sauce: Mix freshly grated horseradish with vinegar, salt, and a bit of sugar for a tangy sauce.",
+                    benefits: "Horseradish contains compounds that can promote digestion, relieve sinus congestion, and have antibacterial properties.",
+                    info: "Horseradish is native to Eastern Europe and is commonly used in culinary dishes for its pungent, spicy flavor."
+                },
+            
+                "kale": {
+                    grow: "Kale grows best in cool temperatures and requires well-drained soil with regular watering. It can tolerate some shade.",
+                    recipe: "Kale Chips: Toss kale leaves with olive oil and salt, then bake them in the oven for a healthy, crispy snack.",
+                    benefits: "Kale is rich in vitamins A, C, and K, as well as antioxidants that support heart health, detoxification, and immune function.",
+                    info: "Kale is a leafy green vegetable that is part of the cabbage family. It is native to the Mediterranean and is known for its nutritional benefits."
+                },
+            
+                "lemon grass": {
+                    grow: "Lemon grass grows best in warm temperatures with full sun. It prefers well-drained soil and regular watering.",
+                    recipe: "Lemon Grass Tea: Boil lemon grass stalks in water for 5-7 minutes to make a refreshing, citrusy tea.",
+                    benefits: "Lemon grass is known for its antibacterial and anti-inflammatory properties. It aids in digestion and has a calming effect.",
+                    info: "Lemon grass is native to Southeast Asia and is commonly used in cooking and traditional medicine for its lemony flavor and health benefits."
+                },
+            
+                "mugwort": {
+                    grow: "Mugwort prefers well-drained, sandy soil and full sun. It needs moderate watering and is resistant to drought.",
+                    recipe: "Mugwort Tea: Steep dried mugwort leaves in hot water to make a calming herbal tea.",
+                    benefits: "Mugwort has been traditionally used to improve digestion, relieve menstrual discomfort, and promote relaxation and sleep.",
+                    info: "Mugwort is native to Europe and Asia and has been used for centuries in herbal medicine and rituals."
+                },
+            
+                "nettle": {
+                    grow: "Nettle grows best in moist, well-drained soil in partial shade to full sun. It requires regular watering and is a fast-growing plant.",
+                    recipe: "Nettle Soup: Boil young nettle leaves with onions, potatoes, and broth for a healthy, nutritious soup.",
+                    benefits: "Nettle is known for its anti-inflammatory properties and can help with joint pain, allergies, and urinary issues.",
+                    info: "Nettle is native to Europe, Asia, and North America. Its leaves and roots are used in herbal medicine for a variety of conditions."
+                },
+            
+                "peppermint": {
+                    grow: "Peppermint thrives in moist, well-drained soil with partial to full sunlight. It needs regular watering and can spread quickly.",
+                    recipe: "Peppermint Tea: Steep fresh peppermint leaves in hot water for a refreshing and soothing tea.",
+                    benefits: "Peppermint is known for its digestive benefits, helping to relieve indigestion, nausea, and headaches. It also has a cooling effect.",
+                    info: "Peppermint is a hybrid plant, native to Europe and Asia. It is widely used in culinary and medicinal applications."
+                },
+            
+                "saffron": {
+                    grow: "Saffron grows best in well-drained, sandy soil with full sun. It requires moderate watering and is sensitive to frost.",
+                    recipe: "Saffron Rice: Add a pinch of saffron threads to boiling water and stir it into rice for a fragrant and colorful dish.",
+                    benefits: "Saffron is rich in antioxidants and has mood-boosting properties. It may help with depression, improve memory, and support heart health.",
+                    info: "Saffron is derived from the flower of Crocus sativus and is native to Southwest Asia. It is one of the most expensive spices in the world."
+                },
+            
+                "st. john's wort": {
+                    grow: "St. John's Wort thrives in well-drained soil and full sun. It requires moderate watering and can tolerate drought.",
+                    recipe: "St. John's Wort Tea: Steep dried flowers in hot water for a soothing tea, often used for its calming effects.",
+                    benefits: "St. John's Wort is commonly used to treat depression, anxiety, and insomnia, and is also known for its anti-inflammatory properties.",
+                    info: "St. John's Wort is native to Europe, but it grows in many regions worldwide. It has been used for centuries in herbal medicine."
+                },
+            
+                "stevia": {
+                    grow: "Stevia grows best in well-drained, fertile soil with full sun. It requires moderate watering and can tolerate some heat.",
+                    recipe: "Stevia Sweetener: Stevia leaves can be dried and crushed to create a natural sugar substitute for sweetening beverages or baked goods.",
+                    benefits: "Stevia is a natural sweetener that does not raise blood sugar levels, making it beneficial for people with diabetes. It also has antioxidant properties.",
+                    info: "Stevia is native to South America and is known for its sweet leaves, which are used as a natural sugar substitute in foods and beverages."
+                },
+            
+                "turmeric": {
+                    grow: "Turmeric grows best in warm, tropical climates with well-drained, fertile soil and regular watering.",
+                    recipe: "Turmeric Latte: Mix turmeric powder with milk and a dash of black pepper for a warming, anti-inflammatory drink.",
+                    benefits: "Turmeric contains curcumin, which has powerful anti-inflammatory and antioxidant effects. It is beneficial for joint health, digestion, and skin.",
+                    info: "Turmeric is a root native to Southeast Asia and is widely used in cooking, particularly in Indian cuisine, for its vibrant yellow color and health benefits."
+                },
+            
+                "valerian": {
+                    grow: "Valerian prefers moist, well-drained soil with partial sun. It requires regular watering and thrives in temperate climates.",
+                    recipe: "Valerian Tea: Steep valerian root in hot water for a calming tea that promotes relaxation and helps with sleep.",
+                    benefits: "Valerian is known for its sedative effects and is commonly used to treat insomnia, anxiety, and stress.",
+                    info: "Valerian is native to Europe and Asia and has been used in herbal medicine for centuries for its calming properties."
+                },
+            
+                "yarrow": {
+                    grow: "Yarrow grows best in well-drained soil and full sun. It needs moderate watering and can tolerate drought.",
+                    recipe: "Yarrow Tea: Steep yarrow leaves in hot water for a herbal tea that can help with cold symptoms and inflammation.",
+                    benefits: "Yarrow has anti-inflammatory, antiseptic, and astringent properties. It is used for wound healing and relieving digestive issues.",
+                    info: "Yarrow is native to Europe and Asia and is commonly used in herbal medicine for its healing properties."
+                },
+            
+                "zaatar": {
+                    grow: "Zaatar grows best in well-drained, fertile soil with full sun. It needs regular watering, especially in dry periods.",
+                    recipe: "Zaatar Spice Mix: Combine dried thyme, oregano, sesame seeds, and sumac to create a flavorful spice blend for meats or bread.",
+                    benefits: "Zaatar is rich in antioxidants and has antibacterial properties. It is beneficial for boosting immunity and improving digestion.",
+                    info: "Zaatar is a Middle Eastern herb blend made with thyme, oregano, and other spices. It is commonly used in cooking for its aromatic flavor."
+                },
+                "basil": {
+                    grow: "Basil thrives in well-drained, rich soil with plenty of sunlight. It needs moderate watering and is sensitive to cold temperatures.",
+                    recipe: "Basil Pesto: Blend basil, garlic, pine nuts, Parmesan cheese, and olive oil to make a delicious pesto sauce.",
+                    benefits: "Basil is rich in antioxidants and has anti-inflammatory properties. It helps boost immunity, reduce stress, and promote digestion.",
+                    info: "Native to India, basil is commonly used in Mediterranean and Asian cuisines. It has aromatic leaves and is used both in cooking and for medicinal purposes."
+                },
+                "rosemary": {
+                    grow: "Rosemary grows well in well-drained, sandy soil with full sunlight. It is drought-tolerant and requires minimal watering once established.",
+                    recipe: "Rosemary Roast Potatoes: Toss potatoes with olive oil, garlic, and rosemary, then roast until golden and crispy.",
+                    benefits: "Rosemary is known to improve memory, stimulate circulation, and promote digestion. It also has antioxidant and antimicrobial properties.",
+                    info: "Native to the Mediterranean region, rosemary is an evergreen shrub used in cooking and traditional medicine, known for its distinct aroma."
+                },
+                "oregano": {
+                    grow: "Oregano prefers well-drained soil and full sunlight. It is drought-tolerant and requires minimal watering once established.",
+                    recipe: "Oregano Pizza Sauce: Combine oregano with tomatoes, garlic, olive oil, and spices for a flavorful pizza base.",
+                    benefits: "Oregano is known for its antibacterial and antioxidant properties. It is often used to treat colds, respiratory issues, and digestive problems.",
+                    info: "Oregano is native to Europe, with a strong aromatic flavor used in Mediterranean and Mexican cuisines."
+                },
+                "parsley": {
+                    grow: "Parsley grows well in well-drained, moist soil with moderate sunlight. It prefers cool temperatures and requires regular watering.",
+                    recipe: "Tabbouleh: Combine parsley, mint, tomatoes, onions, and bulgur wheat with olive oil and lemon for a refreshing salad.",
+                    benefits: "Parsley is rich in vitamins A, C, and K. It helps with digestion and detoxification, and is a natural diuretic.",
+                    info: "Parsley is native to the Mediterranean region. It is widely used as a garnish and also in cooking for its nutritional and medicinal benefits."
+                },
+                "chamomile": {
+                    grow: "Chamomile prefers well-drained, loamy soil and full sunlight. It requires moderate watering and grows best in cooler weather.",
+                    recipe: "Chamomile Tea: Steep dried chamomile flowers in hot water for a calming and soothing beverage.",
+                    benefits: "Chamomile is known for its calming properties and helps with sleep and anxiety. It also has anti-inflammatory and digestive benefits.",
+                    info: "Native to Europe and Western Asia, chamomile is widely used in teas and as an herbal remedy for relaxation and digestion."
+                },
+                "borage": {
+                    grow: "Borage thrives in well-drained soil and full sunlight. It prefers cooler temperatures and regular watering but can tolerate dry spells once established.",
+                    recipe: "Borage Ice Cubes: Freeze borage leaves and flowers in ice cubes to add to summer drinks or use as a garnish for cocktails.",
+                    benefits: "Borage is known for its anti-inflammatory properties and is commonly used to treat skin conditions like eczema. It also helps support hormone balance.",
+                    info: "Borage is native to the Mediterranean and is often grown for its blue flowers, which are edible. It has a mild cucumber-like flavor and is used in salads and herbal teas."
+                },
+                "lemon balm": {
+                    grow: "Lemon balm prefers well-drained, moist soil and partial sunlight. It requires regular watering and does well in moderate temperatures.",
+                    recipe: "Lemon Balm Tea: Steep fresh lemon balm leaves in hot water for a calming, lemon-scented herbal tea.",
+                    benefits: "Lemon balm is known for its calming effects and helps with anxiety, sleep, and digestive issues. It also has antiviral properties.",
+                    info: "Native to Europe, lemon balm is used in teas and as a calming herb in aromatherapy and topical treatments."
+                },
+                "tarragon": {
+                    grow: "Tarragon prefers well-drained, sandy soil and full sunlight. It needs regular watering but is somewhat drought-tolerant once established.",
+                    recipe: "Tarragon Chicken: Sauté chicken with tarragon, garlic, and white wine for a flavorful dish.",
+                    benefits: "Tarragon aids in digestion, reduces bloating, and has antibacterial properties. It is also known for its appetite-stimulating effects.",
+                    info: "Native to Asia and Europe, tarragon is used in French and Mediterranean cuisines for its slightly sweet and licorice-like flavor."
+                },
+                "bay leaves": {
+                    grow: "Bay laurel trees grow best in well-drained, loamy soil and full sunlight. They need minimal watering once established.",
+                    recipe: "Bay Leaf Soup: Add bay leaves to soups and stews to enhance the flavor with a subtle aromatic note.",
+                    benefits: "Bay leaves have anti-inflammatory, antifungal, and antibacterial properties. They are also used for improving digestion and reducing stress.",
+                    info: "Native to the Mediterranean, bay leaves are commonly used in cooking and as a natural remedy for various ailments."
+                },
+                "mint": {
+                    "grow": "Mint grows well in moist, well-drained soil with partial to full sunlight. It can thrive in pots and needs regular watering.",
+                    "recipe": "Mint Tea: Boil fresh mint leaves in water, add honey and lemon for flavor. This tea is great for digestion and refreshing during hot weather.",
+                    "dish": "Mint Mojito: Muddle fresh mint leaves with lime juice, sugar, and soda water for a refreshing and cooling drink.",
+                    "delicacy": "Mint Chutney: Blend fresh mint leaves with coriander, green chilies, ginger, lemon juice, and a pinch of salt to make a tangy and spicy chutney.",
+                    "benefits": "Mint has antioxidant properties and can help soothe indigestion, relieve headaches, and promote fresh breath.",
+                    "info": "Mint is a popular herb used in cooking, drinks, and traditional medicine. It is part of the Mentha family and has a strong, refreshing aroma."
+                },
+                "marjoram": {
+                    grow: "Marjoram grows best in well-drained, sandy soil with full sunlight. It requires minimal watering once established and is drought-tolerant.",
+                    recipe: "Marjoram Chicken: Season chicken with marjoram, garlic, olive oil, and lemon, then roast for a fragrant, flavorful meal.",
+                    benefits: "Marjoram is known for its anti-inflammatory and antimicrobial properties. It helps with digestion, reduces stress, and promotes heart health.",
+                    info: "Native to the Mediterranean, marjoram is a fragrant herb used in cooking and traditional medicine."
+                }
+            
+                        // Add more herbs as needed...
+                    };
+            
+                    function getHerbInfo() {
+                        const input = document.getElementById("userInput").value.toLowerCase();
+                        let response = "";
+            
+                        // Loop through all herbs to match the input with herb names
+                        for (let herb in herbData) {
+    if (input.includes(herb)) {
+        if (input.includes("grow")) {
+            response = herbData[herb].grow;
+        } else if (input.includes("recipe")) {
+            response = herbData[herb].recipe;
+        } else if (input.includes("dish")) {  // Added this line for recipe1
+            response = herbData[herb].dish;
+        } else if (input.includes("delicacy")) {  // Added this line for recipe2
+            response = herbData[herb].delicacy;
+        } else if (input.includes("benefits")) {
+            response = herbData[herb].benefits;
+        } else if (input.includes("info")) {
+            response = herbData[herb].info;
+        }
+        break; // Exit loop after finding the herb
+    }
+}
+
+            
+                        if (!response) {
+                            response = "I didn't understand that. Type the herb name along with 'grow', 'recipe', 'benefits', or 'info' to learn more.";
+                        }
+            
+                        // Display the response in the "response" div
+                        document.getElementById("response").innerHTML = response;
+                    }
+                </script>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- Template Javascript -->
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+
+        // Form submission handling
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We will get back to you soon.');
+            this.reset();
+        });
+    </script>
+    <footer>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Virtual Herbal Garden. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
